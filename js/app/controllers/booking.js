@@ -6,7 +6,7 @@ var rooms = [
 ];
 
 
-var app = angular.module('booking', []);
+var app = angular.module('booking', ['ui.bootstrap']);
 
 
 app.controller('BookingCtrl', ['$scope', function($scope) {
@@ -21,6 +21,20 @@ app.controller('BookingCtrl', ['$scope', function($scope) {
 
   $scope.calcTotal = function() {
     $scope.totalPrice = $scope.roomPrice * $scope.days;
+  };
+
+  $scope.openStartDate = function($event) {
+    $event.preventDefault();
+    $event.stopPropagation();
+
+    $scope.openedStartDate = true;
+  };
+
+  $scope.openFinishedDate = function($event) {
+    $event.preventDefault();
+    $event.stopPropagation();
+
+    $scope.openedStartDate = true;
   };
 
   $scope.init();

@@ -5,6 +5,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
 		<link rel="shortcut icon" href="/favicon.png" type="image/png" />
 
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/reset.css" />
 		<link rel="stylesheet" href="css/font.css" />
 		<link rel="stylesheet" href="vendor/fullpage/jquery.fullPage.css" />
@@ -14,6 +15,8 @@
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCVqLu5itdX3nHXNb9JKZBqrQxajjQfpLE&sensor=true"></script>
 		<script src="vendor/jquery.js"></script>
 		<script src="vendor/angular.min.js"></script>
+		<script src="vendor/ui-bootstrap-custom-0.12.0.min.js"></script>
+		<script src="vendor/ui-bootstrap-custom-tpls-0.12.0.min.js"></script>
 		<script src="vendor/jquery.slimscroll.min.js"></script>
 		<script src="vendor/fullpage/jquery.fullPage.min.js"></script>
 		<script src="vendor/fotorama/fotorama.js"></script>
@@ -177,10 +180,16 @@
 					<dl class="clearfix">
 						<dt>Период проживания</dt>
 						<dd class="fw">
-							<input type="text" class="i-calend">
+
+							<input type="text" class="" datepicker-popup="{{format}}" ng-model="startDate" is-open="openedStartDate" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+              <button type="button" class="btn btn-default" ng-click="openStartDate($event)"></button>
+
 						</dd>
 						<dd class="fw">
-							<input type="text" class="i-calend">
+
+							<input type="text" class="" datepicker-popup="{{format}}" ng-model="finishDate" is-open="openedFinishDate" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+              <button type="button" class="btn btn-default" ng-click="openFinishedDate($event)"></button>
+
 						</dd>
 					</dl>
 
