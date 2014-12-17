@@ -22,6 +22,7 @@
 
     <script src="js/maps.js"></script>
 		<script src="js/js.js"></script>
+		<script src="js/app/controllers/booking.js"></script>
 
 	</head>
 	<body>
@@ -160,78 +161,82 @@
 		</div>
 
 
+		<div ng-app="booking">
+			<div class="booking" id="booking" ng-controller="BookingCtrl">
+				<form action="" class="booking-form full">
+					<h4>Бронирование номера</h4>
+					<dl class="clearfix">
+						<dt>Вы выбрали</dt>
+						<dd class="fw">
+							<select name="" id="appType" ng-model="roomPrice" ng-change="calcTotal()">
+								<option ng-repeat="room in rooms" value="{{room.value}}">
+									{{room.text}}
+								</option>
+							</select>
+						</dd>
+					</dl>
 
-		<div class="booking" id="booking">
-			<form action="" class="booking-form full">
-				<h4>Бронирование номера</h4>
-				<dl class="clearfix">
-					<dt>Вы выбрали</dt>
-					<dd class="fw">
-						<select name="" id="appType">
-						</select>
-					</dd>
-				</dl>
+					<dl class="clearfix">
+						<dt>Период проживания</dt>
+						<dd class="fw">
+							<input type="text" class="i-calend">
+						</dd>
+						<dd class="fw">
+							<input type="text" class="i-calend">
+						</dd>
+					</dl>
 
-				<dl class="clearfix">
-					<dt>Период проживания</dt>
-					<dd class="fw">
-						<input type="text" class="i-calend">
-					</dd>
-					<dd class="fw">
-						<input type="text" class="i-calend">
-					</dd>
-				</dl>
+					<dl class="clearfix">
+						<dt>Стоимость проживания</dt>
+						<dd class="fw">
+							<p><strong>{{totalPrice}} руб.</strong></p>
+						</dd>
+					</dl>
 
-				<dl class="clearfix">
-					<dt>Стоимость проживания</dt>
-					<dd class="fw">
-						<p><strong>10 800 руб.</strong></p>
-					</dd>
-				</dl>
+					<dl class="clearfix">
+						<dt>Контактные данные</dt>
+						<dd class="fw">
+							<input type="text" placeholder="Имя">
+						</dd>
+						<dd class="fw">
+							<input type="text" placeholder="Телефон">
+						</dd>
+						<dd class="fw">
+							<input type="text" placeholder="E-mail">
+						</dd>
+					</dl>
+					<dl class="clearfix">
+						<dd class="fw">
+							<input type="submit">
+						</dd>
+					</dl>
+				</form>
 
-				<dl class="clearfix">
-					<dt>Контактные данные</dt>
-					<dd class="fw">
-						<input type="text" placeholder="Имя">
-					</dd>
-					<dd class="fw">
-						<input type="text" placeholder="Телефон">
-					</dd>
-					<dd class="fw">
-						<input type="text" placeholder="E-mail">
-					</dd>
-				</dl>
-				<dl class="clearfix">
-					<dd class="fw">
-						<input type="submit">
-					</dd>
-				</dl>
-			</form>
+				<script>
 
-			<script>
+	        $(document).ready(function() {
 
-        $(document).ready(function() {
+	          $('.i-calend').Zebra_DatePicker({
+	            months: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+	            days_abbr: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
+	            format: 'd.m.Y',
+	            show_clear_date: false,
+	            show_select_today: false
+	          });
 
-          $('.i-calend').Zebra_DatePicker({
-            months: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
-            days_abbr: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
-            format: 'd.m.Y',
-            show_clear_date: false,
-            show_select_today: false
-          });
+	       });
+	      </script>
 
-       });
-      </script>
-
-      <div class="infoBox">
-      	<h3>Контактная информация</h3>
-      	<div class="infobox-descr">
-	        <p class="office-address">Ульяновск, ул. Кирова, 79</p>
-	        <p class="office-phone">8 (8422) 27 04 50<br />8 (8422) 27 04 49 (факс)</p>
-	        <p class="office-mail"><a href="mailto:info@rakurs-hotel.ru">info@rakurs-hotel.ru</a></p>
+	      <div class="infoBox">
+	      	<h3>Контактная информация</h3>
+	      	<div class="infobox-descr">
+		        <p class="office-address">Ульяновск, ул. Кирова, 79</p>
+		        <p class="office-phone">8 (8422) 27 04 50<br />8 (8422) 27 04 49 (факс)</p>
+		        <p class="office-mail"><a href="mailto:info@rakurs-hotel.ru">info@rakurs-hotel.ru</a></p>
+		      </div>
 	      </div>
-      </div>
 
+			</div>
 		</div>
 
 		<div class="header" id="menu">

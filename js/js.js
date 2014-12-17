@@ -43,12 +43,5 @@ $(document).ready(function() {
 
   });
 
-  var ddBasic = [
-      { text: "Одиночный", value: 1, },
-      { text: "Двойной", value: 2, },
-      { text: "Двойной премиум", value: 3, },
-      { text: "Для людей с ограниченными возможностями", value: 4, }
-  ];
-
 
 });
