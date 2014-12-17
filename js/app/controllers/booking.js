@@ -5,13 +5,14 @@ var rooms = [
   { text: "Для людей с ограниченными возможностями", value: 2500 }
 ];
 
+
 var app = angular.module('booking', []);
+
 
 app.controller('BookingCtrl', ['$scope', function($scope) {
 
   $scope.rooms = rooms;
   $scope.days = 1;
-  $scope.totalPrice = 0;
 
   $scope.init = function() {
     $scope.roomPrice = $scope.rooms[0].value;
