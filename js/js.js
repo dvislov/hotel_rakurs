@@ -50,12 +50,5 @@ $(document).ready(function() {
       { text: "Для людей с ограниченными возможностями", value: 4, }
   ];
 
-  $('#appType').ddslick({
-      data: ddBasic,
-      width: '100%',
-      background: '#fff',
-      selectText: "Номер"
-  });
-
 
 });
