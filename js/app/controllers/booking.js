@@ -85,10 +85,14 @@ app.controller('BookingCtrl', ['$scope', function($scope) {
 
   $scope.sendData = function() {
     var message = "This text must be send to server:\n" +
+    "Name: " + $scope.clientName + "\n" +
+    "Phone: " + $scope.clientPhone + "\n" +
+    "E-mail: " + $scope.clientEmail + "\n" +
+    "____________________________________________________\n" +
     "Apartments type: " + $scope.roomPrice + " RUR per day\n" +
     "Date start: " + $scope.startDateFormatted + "\n" +
     "Date finish: " + $scope.finishDateFormatted + "\n" +
-    "Duration: " + $scope.duration + "days \n" +
+    "Duration: " + $scope.duration + "day(s) \n" +
     "____________________________________________________\n" +
     "Total: " + $scope.totalPrice + " RUR";
 
