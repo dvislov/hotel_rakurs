@@ -64,11 +64,22 @@ app.controller('BookingCtrl', ['$scope', function($scope) {
     $scope.duration = finishRoundDay.diff(startRoundDay, 'days');
   };
 
+  $scope.checkDatesRange = function() {
+    var start = moment($scope.startDate).startOf('day');
+    var finish = moment($scope.finishDate).startOf('day');
+
+    if (moment.max(start, finish) > finish) {
+      $scope.finishDate = moment($scope.startDate).add(1, 'day').format();
+    };
+  };
+
   $scope.$watch('startDate', function() {
+    $scope.checkDatesRange();
     $scope.calcTotal();
   });
 
   $scope.$watch('finishDate', function() {
+    $scope.checkDatesRange();
     $scope.calcTotal();
   });
 
