@@ -695,4 +695,32 @@ html, body {
   }
 
 /* Added by @vdv73rus */
-
+.i-calend-wrap {
+  position: relative;
+  z-index: 1000;
+}
+.i-calend-wrap-input {
+  position: relative;
+  z-index: 1010;
+}
+.i-calend-wrap-button {
+  position: absolute;
+  z-index: 1030;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: transparent;
+  border: none;
+}
+.i-calend-wrap input[type="hidden"] {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1020;
+  display: none;
+}
+.dropdown-menu {
+  z-index: 1050;
+  margin-left: -67px;
+}

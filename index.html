@@ -20,6 +20,7 @@
 		<script src="vendor/jquery.slimscroll.min.js"></script>
 		<script src="vendor/fullpage/jquery.fullPage.min.js"></script>
 		<script src="vendor/fotorama/fotorama.js"></script>
+		<script src="vendor/moment.min.js"></script>
 
     <script src="js/maps.js"></script>
 		<script src="js/js.js"></script>
@@ -180,15 +181,52 @@
 					<dl class="clearfix">
 						<dt>Период проживания</dt>
 						<dd class="fw">
-
-							<input type="text" class="" datepicker-popup="{{format}}" ng-model="startDate" is-open="openedStartDate" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
-              <button type="button" class="btn btn-default" ng-click="openStartDate($event)"></button>
-
+							<div class="i-calend-wrap">
+								<input
+									type="text"
+									class="i-calend-wrap-input"
+									value="{{startDateFormatted}}" />
+								<input
+									type="hidden"
+									datepicker-popup="dd.MM.yyyy"
+									starting-day="1"
+									ng-model="startDate"
+									is-open="openedStartDate"
+									min-date="minStartDate"
+									max-date="maxStartDate"
+									show-button-bar="false"
+									show-weeks="false"
+									ng-required="true" />
+	              <button
+	              	type="button"
+	              	class="i-calend-wrap-button"
+	              	ng-click="openStartDate($event)">
+	              </button>
+							</div>
 						</dd>
 						<dd class="fw">
-
-							<input type="text" class="" datepicker-popup="{{format}}" ng-model="finishDate" is-open="openedFinishDate" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
-              <button type="button" class="btn btn-default" ng-click="openFinishedDate($event)"></button>
+							<div class="i-calend-wrap">
+								<input
+									type="text"
+									class="i-calend-wrap-input"
+									value="{{finishDateFormatted}}" />
+								<input
+									type="hidden"
+									datepicker-popup="dd.MM.yyyy"
+									starting-day="1"
+									ng-model="finishDate"
+									is-open="openedFinishDate"
+									min-date="minFinishDate"
+									max-date="maxFinishDate"
+									show-button-bar="false"
+									show-weeks="false"
+									ng-required="true" />
+	              <button
+	              	type="button"
+	              	class="i-calend-wrap-button"
+	              	ng-click="openFinishDate($event)">
+	              </button>
+              </div>
 
 						</dd>
 					</dl>
