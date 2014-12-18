@@ -695,6 +695,9 @@ html, body {
   }
 
 /* Added by @vdv73rus */
+.fw {
+  position: relative;
+}
 .i-calend-wrap {
   position: relative;
 }
@@ -733,4 +736,28 @@ html, body {
   vertical-align: top;
   text-align: center;
   padding-bottom: 10px;
+}
+
+.customSelect {
+  background-color: #fff;
+  font-size: 12px;
+  height: 25px;
+  border-right: 22px solid #2e8301;
+}
+.customSelectInner {
+  padding: 7px 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.customSelectInner:after {
+  content: '';
+  font-size: 0;
+  position: absolute;
+  right: 7px;
+  top: 11px;
+  width: 0;
+  height: 0;
+  border: 4px solid transparent;
+  border-top: 4px solid white;
 }

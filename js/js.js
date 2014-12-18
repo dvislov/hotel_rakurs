@@ -44,4 +44,6 @@ $(document).ready(function() {
   });
 
 
+  // customSelect
+  $('.customSelect').customSelect();
 });

@@ -18,6 +18,7 @@
 		<script src="vendor/ui-bootstrap-custom-0.12.0.min.js"></script>
 		<script src="vendor/ui-bootstrap-custom-tpls-0.12.0.min.js"></script>
 		<script src="vendor/jquery.slimscroll.min.js"></script>
+		<script src="vendor/jquery.customSelect.min.js"></script>
 		<script src="vendor/fullpage/jquery.fullPage.min.js"></script>
 		<script src="vendor/fotorama/fotorama.js"></script>
 		<script src="vendor/moment.min.js"></script>
@@ -170,7 +171,7 @@
 					<dl class="clearfix">
 						<dt>Вы выбрали</dt>
 						<dd class="fw">
-							<select name="" id="appType" ng-model="roomPrice" ng-change="calcTotal()">
+							<select name="" id="appType" class="customSelect" ng-model="roomPrice" ng-change="calcTotal()">
 								<option ng-repeat="room in rooms" value="{{room.value}}">
 									{{room.text}}
 								</option>
