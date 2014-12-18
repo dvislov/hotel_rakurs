@@ -710,7 +710,7 @@ html, body {
   height: 100%;
   left: 0;
   top: 0;
-  background-color: transparent;
+  background: transparent url(../i/i-calend.png) right center no-repeat;
   border: none;
 }
 .i-calend-wrap input[type="hidden"] {
