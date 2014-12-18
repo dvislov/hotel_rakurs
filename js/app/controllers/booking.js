@@ -13,6 +13,11 @@ app.controller('BookingCtrl', ['$scope', function($scope) {
 
   $scope.rooms = rooms;
 
+  $scope.dateOptions = {
+    startingDay: 1,
+    showWeeks: false
+  };
+
   $scope.init = function() {
     $scope.roomPrice = $scope.rooms[0].value;
 

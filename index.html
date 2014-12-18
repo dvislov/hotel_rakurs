@@ -189,13 +189,12 @@
 								<input
 									type="hidden"
 									datepicker-popup="dd.MM.yyyy"
-									starting-day="1"
 									ng-model="startDate"
 									is-open="openedStartDate"
 									min-date="minStartDate"
 									max-date="maxStartDate"
 									show-button-bar="false"
-									show-weeks="false"
+									datepicker-options="dateOptions"
 									ng-required="true" />
 	              <button
 	              	type="button"
@@ -213,13 +212,12 @@
 								<input
 									type="hidden"
 									datepicker-popup="dd.MM.yyyy"
-									starting-day="1"
 									ng-model="finishDate"
 									is-open="openedFinishDate"
 									min-date="minFinishDate"
 									max-date="maxFinishDate"
 									show-button-bar="false"
-									show-weeks="false"
+									datepicker-options="dateOptions"
 									ng-required="true" />
 	              <button
 	              	type="button"

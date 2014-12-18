@@ -722,5 +722,16 @@ html, body {
 }
 .dropdown-menu {
   z-index: 1050;
-  margin-left: -67px;
+  margin-left: -18px;
+  margin-top: 24px;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+.dropdown-menu *:focus {
+  outline: none !important;
+}
+.dropdown-menu table th {
+  vertical-align: top;
+  text-align: center;
+  padding-bottom: 10px;
 }
