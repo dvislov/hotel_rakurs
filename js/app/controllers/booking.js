@@ -9,6 +9,29 @@ var rooms = [
 var app = angular.module('booking', ['ui.bootstrap']);
 
 
+app.filter('currencyRUR', function() {
+  return function(input) {
+    input = input.toString() || '';
+    var outTemp = "";
+    var out = "";
+
+    var digitPosition = 0;
+    for (var i = input.length - 1; i >= 0; i--) {
+      if (digitPosition % 3 == 0) {
+        outTemp += " ";
+      }
+      digitPosition ++;
+      outTemp += input[i];
+    };
+
+    for (var i = outTemp.length - 1; i >= 0; i--) {
+      out += outTemp[i];
+    };
+
+    return out;
+  };
+});
+
 app.controller('BookingCtrl', ['$scope', function($scope) {
 
   $scope.rooms = rooms;
