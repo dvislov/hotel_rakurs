@@ -67,6 +67,18 @@ app.controller('BookingCtrl', ['$scope', function($scope) {
     $scope.calcTotal();
   });
 
+  $scope.sendData = function() {
+    var message = "This text must be send to server:\n" +
+    "Apartments type: " + $scope.roomPrice + " RUR per day\n" +
+    "Date start: " + $scope.startDateFormatted + "\n" +
+    "Date finish: " + $scope.finishDateFormatted + "\n" +
+    "Duration: " + $scope.duration + "days \n" +
+    "____________________________________________________\n" +
+    "Total: " + $scope.totalPrice + " RUR";
+
+    alert(message);
+  }
+
   $scope.init();
 
 }]);
