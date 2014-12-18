@@ -16,15 +16,18 @@ app.controller('BookingCtrl', ['$scope', function($scope) {
   $scope.init = function() {
     $scope.roomPrice = $scope.rooms[0].value;
 
-    $scope.startDate = moment();
-    $scope.finishDate = moment().add(1, 'day');
+    $scope.startDate = moment().format();
+    $scope.finishDate = moment().add(1, 'day').format();
 
-    $scope.calcDuration();
+    $scope.minStartDate = $scope.startDate;
+    $scope.minFinishDate = $scope.finishDate;
+
     $scope.calcTotal();
   };
 
   $scope.calcTotal = function() {
     $scope.calcDuration();
+    $scope.dateInputsFormat();
     $scope.totalPrice = $scope.roomPrice * $scope.duration;
   };
 
@@ -44,7 +47,7 @@ app.controller('BookingCtrl', ['$scope', function($scope) {
     $scope.openedFinishDate = true;
   };
 
-  $scope.datesFormat = function() {
+  $scope.dateInputsFormat = function() {
     $scope.startDateFormatted = "C " + moment($scope.startDate).format('DD.MM.YYYY') + " (14:00)";
     $scope.finishDateFormatted = "По " + moment($scope.finishDate).format('DD.MM.YYYY') + " (12:00)";
   };
@@ -58,12 +61,10 @@ app.controller('BookingCtrl', ['$scope', function($scope) {
 
   $scope.$watch('startDate', function() {
     $scope.calcTotal();
-    $scope.datesFormat();
   });
 
   $scope.$watch('finishDate', function() {
     $scope.calcTotal();
-    $scope.datesFormat();
   });
 
   $scope.init();
